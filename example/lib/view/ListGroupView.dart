@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_components/widgets.dart';
-
+import 'package:flutter_components/SimpleTextField.dart';
 import '../widget/TitleWidget.dart';
 
 class ListGroupView extends StatelessWidget {
@@ -125,6 +125,13 @@ class ListGroupView extends StatelessWidget {
               ),
               onPressed: () {},
             ),
+            ListItem(
+              title: '输入',
+              trailing: SimpleTextField(
+                  placeholder:'请输入',
+                  keyboardType:TextInputType.number
+              ),
+            )
           ],
         )
       ],

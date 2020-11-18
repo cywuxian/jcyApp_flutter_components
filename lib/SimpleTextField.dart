@@ -96,11 +96,15 @@ class SimpleTextFieldState extends State<SimpleTextField> with WidgetsBindingObs
           textInputAction: TextInputAction.done,
           keyboardType: widget.keyboardType,
           inputFormatters: (widget.keyboardType == TextInputType.number || widget.keyboardType == TextInputType.phone) ?
-          [WhitelistingTextInputFormatter(RegExp('[0-9]'))] : [],
+          [WhitelistingTextInputFormatter(RegExp('[0-9]|[.]'))] : [],
           decoration: InputDecoration(
             isDense: false,
-            contentPadding: const EdgeInsets.symmetric(vertical: 16.0),
+            contentPadding: const EdgeInsets.symmetric(vertical: 15.0),
             hintText: widget.placeholder,
+            hintStyle: TextStyle(
+              color: Color(0xffCCCCCC),
+              fontSize: 15.0
+            ),
             counterText: '',
             focusedBorder: !widget.bordered ? InputBorder.none : UnderlineInputBorder(
               borderSide: BorderSide(
