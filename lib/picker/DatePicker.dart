@@ -23,6 +23,7 @@ enum DateTimePickerMode {
   /// Display DateTimePicker
   datetime,
 
+  minute,
   /// Display MonthPicker
   month
 }
@@ -138,6 +139,7 @@ class DatePicker {
         );
         break;
       case DateTimePickerMode.datetime:
+      case DateTimePickerMode.minute:
         pickerWidget = DateTimePickerWidget(
           minDateTime: route.minDateTime,
           maxDateTime: route.maxDateTime,
@@ -304,6 +306,7 @@ class _DatePickerComponent extends StatelessWidget {
         );
         break;
       case DateTimePickerMode.datetime:
+      case DateTimePickerMode.minute:
         pickerWidget = DateTimePickerWidget(
           minDateTime: route.minDateTime,
           maxDateTime: route.maxDateTime,
