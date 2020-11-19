@@ -20,6 +20,7 @@ class _TimePickerView extends State<TimePickerView> {
 
   String _currentDate = DateUtil.formatDate(new DateTime.now(), format: "yyyy年MM月dd日");
   String _currentTime = DateUtil.formatDate(new DateTime.now(),);
+  String _currentMinute = DateUtil.formatDate(new DateTime.now(),);
 
   @override
   void initState() {
@@ -54,6 +55,19 @@ class _TimePickerView extends State<TimePickerView> {
               onConfirm: (date, value, format) {
                 setState(() {
                   _currentTime = format;
+                });
+              },);
+          },),
+        TitleWidget(title: "选择到分" ),
+        Button(_currentMinute,
+          onPressed: () {
+            DatePicker.showDatePicker(context,
+              initialDateTime: DateUtil.getDateTime(_currentMinute),
+              pickerMode: DateTimePickerMode.minute,
+              maxDateTime: new DateTime.now(),
+              onConfirm: (date, value, format) {
+                setState(() {
+                  _currentMinute = format;
                 });
               },);
           },),

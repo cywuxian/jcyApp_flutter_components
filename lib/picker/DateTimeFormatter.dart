@@ -20,6 +20,8 @@ class DateTimeFormatter {
         return DATETIME_PICKER_TIME_FORMAT;
       case DateTimePickerMode.datetime:
         return DATETIME_PICKER_DATETIME_FORMAT;
+      case DateTimePickerMode.minute:
+        return DATETIME_PICKER_MINUTE_FORMAT;
       case DateTimePickerMode.month:
         return DATETIME_PICKER_MONTH_FORMAT;
     }
