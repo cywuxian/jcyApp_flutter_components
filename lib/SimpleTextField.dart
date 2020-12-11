@@ -133,7 +133,7 @@ class SimpleTextFieldState extends State<SimpleTextField> with WidgetsBindingObs
               hint: '清空输入框',
               child: GestureDetector(
                 child: Container(
-                  child: Icon(Icons.clear, color: Colors.grey,),
+                  child: Image.asset('lib/ui/assets/clean.png', width: 16, fit: BoxFit.fill,),
                   padding: EdgeInsets.only(right: 12,top: 4),
                 ),
                 onTap: () {
