@@ -133,7 +133,7 @@ class SimpleTextFieldState extends State<SimpleTextField> with WidgetsBindingObs
               hint: '清空输入框',
               child: GestureDetector(
                 child: Container(
-                  child: Image.asset('lib/ui/assets/clean.png', width: 16, fit: BoxFit.fill,),
+                  child: Image.asset('lib/assets/clean.png', width: 16, fit: BoxFit.fill,),
                   padding: EdgeInsets.only(right: 12,top: 4),
                 ),
                 onTap: () {
@@ -150,8 +150,8 @@ class SimpleTextFieldState extends State<SimpleTextField> with WidgetsBindingObs
                 child: Container(
                   padding: EdgeInsets.only(right: 15),
                   child: Image.asset(
-                    _isShowPwd ? "lib/ui/assets/password_visible.png" :
-                    "lib/ui/assets/password_invisible.png",
+                    _isShowPwd ? "lib/assets/password_visible.png" :
+                    "lib/assets/password_invisible.png",
                     width: 20,
                     height: 20,
                   ),
