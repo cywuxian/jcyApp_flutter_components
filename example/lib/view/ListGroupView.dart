@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_components/scaffold/PageScaffold.dart';
 import 'package:flutter_components/widgets.dart';
 import 'package:flutter_components/SimpleTextField.dart';
 import '../widget/TitleWidget.dart';
@@ -6,7 +7,9 @@ import '../widget/TitleWidget.dart';
 class ListGroupView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    return PageScaffold(
+      title: '列表',
+        body: ListView(
       children: <Widget>[
         TitleWidget(
           title: "List 列表",
@@ -54,8 +57,8 @@ class ListGroupView extends StatelessWidget {
                 width: 10,
                 height: 10,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Color(0xffFF0000)
+                    borderRadius: BorderRadius.circular(10),
+                    color: Color(0xffFF0000)
                 ),
               ),
               onPressed: () {},
@@ -66,8 +69,8 @@ class ListGroupView extends StatelessWidget {
                 width: 28,
                 height: 28,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(2),
-                    color: Color(0xffdddddd),
+                  borderRadius: BorderRadius.circular(2),
+                  color: Color(0xffdddddd),
                 ),
               ),
               onPressed: () {},
@@ -100,8 +103,8 @@ class ListGroupView extends StatelessWidget {
               ),
               title: "手机号",
               trailing: ListItemTrailing(
-                 text: "18655256672",
-                 placeholder: "请输入手机号",
+                text: "18655256672",
+                placeholder: "请输入手机号",
               ),
               onPressed: () {},
             ),
@@ -135,6 +138,7 @@ class ListGroupView extends StatelessWidget {
           ],
         )
       ],
+    )
     );
   }
 
