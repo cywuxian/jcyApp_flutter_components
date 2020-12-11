@@ -78,7 +78,17 @@ class _PageScaffoldState extends State<PageScaffold> with AutomaticKeepAliveClie
         withShadow: widget.withShadow,
         loading: widget.navigatorInitLoading,
       ),
-      body: widget.body,
+      body: GestureDetector(
+        behavior: HitTestBehavior.translucent,
+        onTap: (){
+          FocusScopeNode currentFocus = FocusScope.of(context);
+          if (!currentFocus.hasPrimaryFocus &&
+              currentFocus.focusedChild != null) {
+            FocusManager.instance.primaryFocus.unfocus();
+          }
+        },
+        child: widget.body,
+      ),
     );
   }
 
