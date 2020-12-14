@@ -197,8 +197,8 @@ class Ui {
         child: Text(message,
           textAlign: TextAlign.center,
           style: const TextStyle(
-            color: Color(0XFF888888),
-            fontSize: 14,
+            color: Color(0XFF333333),
+            fontSize: 15,
           ),),
         onConfirm: onConfirm,
         onCancel: onCancel,
