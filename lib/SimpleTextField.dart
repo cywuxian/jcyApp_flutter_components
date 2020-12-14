@@ -156,7 +156,7 @@ class SimpleTextFieldState extends State<SimpleTextField> with WidgetsBindingObs
               child: GestureDetector(
                 child: Container(
                   child: Icon(Icons.cancel, color: Color(0xffCBCBCB)),
-                  padding: EdgeInsets.only(right: 12,top: 4),
+                  padding: EdgeInsets.only(top: 4),
                 ),
                 onTap: () {
                   controller.text = '';
