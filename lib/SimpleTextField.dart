@@ -23,7 +23,8 @@ class SimpleTextField extends StatefulWidget {
     this.isInputPwd: false,
     this.keyName,
     this.trailing,
-    this.bordered = true
+    this.bordered = true,
+    this.textEditingController
   }): super(key: key);
 
   final ValueChanged<String> onChanged;
@@ -36,6 +37,7 @@ class SimpleTextField extends StatefulWidget {
   final bool isInputPwd;
   final Widget trailing;
   final bool bordered;
+  final TextEditingController textEditingController;
 
   final String keyName;
 
@@ -61,7 +63,7 @@ class SimpleTextFieldState extends State<SimpleTextField> with WidgetsBindingObs
       this.focusNode = FocusNode();
     }
     _currentValue = widget.value != null ? widget.value : "";
-    controller = new TextEditingController(
+    controller = widget.textEditingController != null? widget.textEditingController:new TextEditingController(
         text: widget.value
     );
     _isShowDelete = controller.text.isEmpty;
