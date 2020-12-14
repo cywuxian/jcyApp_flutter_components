@@ -139,7 +139,8 @@ class ConfirmDialog extends BaseDialog {
                 child: Text(
                   _cancelText,
                   style: TextStyle(
-                      fontSize: 18
+                      fontSize: 15,
+                    color: Color(0xff333333)
                   ),
                 ),
                 shape: RoundedRectangleBorder(
