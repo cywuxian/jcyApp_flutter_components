@@ -51,8 +51,15 @@ class SimpleTextFieldState extends State<SimpleTextField> with WidgetsBindingObs
   TextEditingController controller;
   String _currentValue;
 
+  FocusNode focusNode;
+
   @override
   void initState() {
+    if(widget.focusNode != null) {
+      this.focusNode = widget.focusNode;
+    }else{
+      this.focusNode = FocusNode();
+    }
     _currentValue = widget.value != null ? widget.value : "";
     controller = new TextEditingController(
         text: widget.value
@@ -60,8 +67,16 @@ class SimpleTextFieldState extends State<SimpleTextField> with WidgetsBindingObs
     _isShowDelete = controller.text.isEmpty;
     controller.addListener(() {
       setState(() {
-        _isShowDelete = controller.text.isEmpty;
+        if(!this.focusNode.hasFocus){
+          _isShowDelete = false;
+        }else {
+          _isShowDelete = controller.text.isEmpty;
+        }
+
       });
+    });
+    this.focusNode?.addListener(() {
+      _isShowDelete = this.focusNode.hasFocus;
     });
     WidgetsBinding.instance.addObserver(this);
     super.initState();
@@ -72,6 +87,7 @@ class SimpleTextFieldState extends State<SimpleTextField> with WidgetsBindingObs
     _subscription?.cancel();
     controller?.removeListener(() {});
     controller?.dispose();
+    this.focusNode?.removeListener(() {});
     WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
@@ -84,7 +100,7 @@ class SimpleTextFieldState extends State<SimpleTextField> with WidgetsBindingObs
       alignment: Alignment.centerRight,
       children: <Widget>[
         TextField(
-          focusNode: widget.focusNode,
+          focusNode: this.focusNode,
           maxLength: widget.maxLength,
           cursorColor: Ui.isDarkMode(context) ? Colors.white : Theme.of(context).primaryColor,
           obscureText: widget.isInputPwd ? !_isShowPwd : false,
