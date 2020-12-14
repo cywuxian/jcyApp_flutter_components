@@ -68,7 +68,7 @@ class SimpleTextFieldState extends State<SimpleTextField> with WidgetsBindingObs
     controller.addListener(() {
       setState(() {
         if(!this.focusNode.hasFocus){
-          _isShowDelete = false;
+          _isShowDelete = true;
         }else {
           _isShowDelete = controller.text.isEmpty;
         }
@@ -76,7 +76,13 @@ class SimpleTextFieldState extends State<SimpleTextField> with WidgetsBindingObs
       });
     });
     this.focusNode?.addListener(() {
-      _isShowDelete = this.focusNode.hasFocus;
+      setState(() {
+        if(this.focusNode.hasFocus) {
+          _isShowDelete = !controller.text.isNotEmpty;
+        }else {
+          _isShowDelete = true;
+        }
+      });
     });
     WidgetsBinding.instance.addObserver(this);
     super.initState();
