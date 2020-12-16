@@ -152,7 +152,7 @@ class SimpleTextFieldState extends State<SimpleTextField> with WidgetsBindingObs
         Row(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            controller.text?.length != 0 && focusNode.hasFocus&&!widget.isInputPwd? Semantics(
+            controller.text?.length != 0 && focusNode.hasFocus? Semantics(
               label: '清空',
               hint: '清空输入框',
               child: GestureDetector(
