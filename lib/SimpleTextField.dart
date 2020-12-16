@@ -152,20 +152,20 @@ class SimpleTextFieldState extends State<SimpleTextField> with WidgetsBindingObs
         Row(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            _isShowDelete || widget.isInputPwd ? Gaps.empty : Semantics(
+            controller.text?.length != 0 && focusNode.hasFocus&&!widget.isInputPwd? Semantics(
               label: '清空',
               hint: '清空输入框',
               child: GestureDetector(
                 child: Container(
-                  child: Icon(Icons.cancel, color: Color(0xffCBCBCB)),
+                  child: Icon(Icons.cancel, color: Color(0xffCBCBCB), size: 16,),
                   padding: EdgeInsets.only(top: 4),
                 ),
                 onTap: () {
                   controller.text = '';
-                  widget.onChanged("");
+                  widget.onChanged?.call('');
                 },
               ),
-            ),
+            ):Gaps.empty ,
             !widget.isInputPwd ? Gaps.empty : Gaps.hGap15,
             !widget.isInputPwd ? Gaps.empty : Semantics(
               label: '密码可见开关',
