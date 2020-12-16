@@ -180,7 +180,7 @@ class ConfirmDialog extends BaseDialog {
                 child: Text(
                   _confirmText,
                   style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 15,
                     color: ThemeColorUtil.primaryTextColor(context)
                   ),
                 ),

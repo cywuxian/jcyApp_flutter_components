@@ -132,7 +132,9 @@ class ListGroupView extends StatelessWidget {
               title: '输入',
               trailing: SimpleTextField(
                   placeholder:'请输入',
-                  keyboardType:TextInputType.number
+                  keyboardType:TextInputType.number,
+                 value: '123',
+                 // isInputPwd: true,
               ),
             )
           ],
