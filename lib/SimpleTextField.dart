@@ -167,26 +167,26 @@ class SimpleTextFieldState extends State<SimpleTextField> with WidgetsBindingObs
               ),
             ):Gaps.empty ,
             !widget.isInputPwd ? Gaps.empty : Gaps.hGap15,
-            !widget.isInputPwd ? Gaps.empty : Semantics(
-              label: '密码可见开关',
-              hint: '密码是否可见',
-              child: GestureDetector(
-                child: Container(
-                  padding: EdgeInsets.only(right: 15),
-                  child: Image.asset(
-                    _isShowPwd ? "lib/ui/assets/password_visible.png" :
-                    "lib/ui/assets/password_invisible.png",
-                    width: 20,
-                    height: 20,
-                  ),
-                ),
-                onTap: () {
-                  setState(() {
-                    _isShowPwd = !_isShowPwd;
-                  });
-                },
-              ),
-            ),
+            // !widget.isInputPwd ? Gaps.empty : Semantics(
+            //   label: '密码可见开关',
+            //   hint: '密码是否可见',
+            //   child: GestureDetector(
+            //     child: Container(
+            //       padding: EdgeInsets.only(right: 15),
+            //       child: Image.asset(
+            //         _isShowPwd ? "lib/ui/assets/password_visible.png" :
+            //         "lib/ui/assets/password_invisible.png",
+            //         width: 20,
+            //         height: 20,
+            //       ),
+            //     ),
+            //     onTap: () {
+            //       setState(() {
+            //         _isShowPwd = !_isShowPwd;
+            //       });
+            //     },
+            //   ),
+            // ),
             widget.trailing != null ? Theme(
                 data: Theme.of(context).copyWith(
                   buttonTheme: ButtonThemeData(
