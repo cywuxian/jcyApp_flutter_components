@@ -192,7 +192,7 @@ class SimpleTextFieldState extends State<SimpleTextField> with WidgetsBindingObs
                   buttonTheme: ButtonThemeData(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     height: 26.0,
-                    minWidth: 76.0,
+                    // minWidth: 76.0,
                     materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                   ),
                 ),
