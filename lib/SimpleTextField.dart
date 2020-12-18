@@ -109,10 +109,6 @@ class SimpleTextFieldState extends State<SimpleTextField> with WidgetsBindingObs
 
   @override
   Widget build(BuildContext context) {
-    if(_currentValue != widget.value) {
-      _currentValue = widget.value;
-      controller.text = widget.value;
-    }
     return Stack(
       alignment: Alignment.centerRight,
       children: <Widget>[
