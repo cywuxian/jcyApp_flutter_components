@@ -89,8 +89,8 @@ class SimpleTextFieldState extends State<SimpleTextField> with WidgetsBindingObs
   }
  @override
   void didUpdateWidget(covariant SimpleTextField oldWidget) {
-    if(controller.text != oldWidget.value) {
-      setValue(oldWidget.value);
+    if(controller.text != widget.value) {
+      setValue(widget.value);
     }
     super.didUpdateWidget(oldWidget);
   }
