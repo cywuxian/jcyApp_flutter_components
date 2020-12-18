@@ -46,13 +46,11 @@ class SimpleTextField extends StatefulWidget {
 }
 
 class SimpleTextFieldState extends State<SimpleTextField> with WidgetsBindingObserver {
-
   bool _isShowPwd = false;
   bool _isShowDelete;
   StreamSubscription _subscription;
   TextEditingController controller;
   String _currentValue;
-
   FocusNode focusNode;
 
   @override
@@ -89,7 +87,14 @@ class SimpleTextFieldState extends State<SimpleTextField> with WidgetsBindingObs
     WidgetsBinding.instance.addObserver(this);
     super.initState();
   }
-
+ @override
+  void didUpdateWidget(covariant SimpleTextField oldWidget) {
+    if(controller.text != oldWidget.value) {
+      _currentValue = oldWidget.value;
+      controller.text = oldWidget.value;
+    }
+    super.didUpdateWidget(oldWidget);
+  }
   @override
   void dispose() {
     _subscription?.cancel();
@@ -104,6 +109,10 @@ class SimpleTextFieldState extends State<SimpleTextField> with WidgetsBindingObs
 
   @override
   Widget build(BuildContext context) {
+    if(_currentValue != widget.value) {
+      _currentValue = widget.value;
+      controller.text = widget.value;
+    }
     return Stack(
       alignment: Alignment.centerRight,
       children: <Widget>[
