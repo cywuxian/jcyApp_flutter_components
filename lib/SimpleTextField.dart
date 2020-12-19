@@ -216,7 +216,7 @@ class SimpleTextFieldState extends State<SimpleTextField> with WidgetsBindingObs
       controller.selection = TextSelection.fromPosition(
           TextPosition(
               affinity: TextAffinity.downstream,
-              offset: value.length
+              offset: value?.length??0
           )
       );
     });
