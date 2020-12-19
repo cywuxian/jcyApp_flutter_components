@@ -127,7 +127,7 @@ class SimpleTextFieldState extends State<SimpleTextField> with WidgetsBindingObs
           [WhitelistingTextInputFormatter(RegExp('[0-9]|[.]'))] : [],
           decoration: InputDecoration(
             isDense: false,
-            contentPadding: const EdgeInsets.symmetric(vertical: 15.0),
+            // contentPadding: const EdgeInsets.symmetric(vertical: 15.0),
             hintText: widget.placeholder,
             hintStyle: TextStyle(
               color: Color(0xffCCCCCC),
