@@ -118,6 +118,7 @@ class SimpleTextFieldState extends State<SimpleTextField> with WidgetsBindingObs
           autofocus: widget.autoFocus,
           controller: controller,
           style: TextStyle(
+              color: Color(0xff333333),
               fontSize: widget.fontSize
           ),
           textInputAction: TextInputAction.done,
@@ -130,7 +131,7 @@ class SimpleTextFieldState extends State<SimpleTextField> with WidgetsBindingObs
             hintText: widget.placeholder,
             hintStyle: TextStyle(
               color: Color(0xffCCCCCC),
-              fontSize: 15.0
+              fontSize: widget.fontSize
             ),
             counterText: '',
             focusedBorder: !widget.bordered ? InputBorder.none : UnderlineInputBorder(
