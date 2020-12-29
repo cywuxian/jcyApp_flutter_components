@@ -23,6 +23,7 @@ class SimpleTextField extends StatefulWidget {
     this.isInputPwd: false,
     this.keyName,
     this.trailing,
+    this.fontSize = 17,
     this.bordered = true,
   }): super(key: key);
 
@@ -36,7 +37,7 @@ class SimpleTextField extends StatefulWidget {
   final bool isInputPwd;
   final Widget trailing;
   final bool bordered;
-
+  final double fontSize;
   final String keyName;
 
   @override
@@ -117,7 +118,7 @@ class SimpleTextFieldState extends State<SimpleTextField> with WidgetsBindingObs
           autofocus: widget.autoFocus,
           controller: controller,
           style: TextStyle(
-              fontSize: 17
+              fontSize: widget.fontSize
           ),
           textInputAction: TextInputAction.done,
           keyboardType: widget.keyboardType,
