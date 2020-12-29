@@ -3,8 +3,17 @@ import 'package:flutter_components/scaffold/PageScaffold.dart';
 import 'package:flutter_components/widgets.dart';
 import 'package:flutter_components/SimpleTextField.dart';
 import '../widget/TitleWidget.dart';
+class ListGroupView extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _ListGroupView();
+  }
 
-class ListGroupView extends StatelessWidget {
+}
+class _ListGroupView extends State<ListGroupView> {
+
+  String value = '123333';
+
   @override
   Widget build(BuildContext context) {
     return PageScaffold(
@@ -18,7 +27,12 @@ class ListGroupView extends StatelessWidget {
           children: [
             ListItem(
               title: "标题名称",
-              onPressed: () {},
+              onPressed: () {
+                value = '123123';
+                setState(() {
+
+                });
+              },
             ),
             ListItem(
               title: "标题名称",
@@ -133,7 +147,8 @@ class ListGroupView extends StatelessWidget {
               trailing: SimpleTextField(
                   placeholder:'请输入',
                   keyboardType:TextInputType.number,
-                 value: '123',
+                 value: value,
+                 trailing: Text('123'),
                  // isInputPwd: true,
               ),
             )
