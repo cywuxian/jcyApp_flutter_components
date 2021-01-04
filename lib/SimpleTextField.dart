@@ -170,7 +170,7 @@ class SimpleTextFieldState extends State<SimpleTextField> with WidgetsBindingObs
                 },
               ),
             ):Gaps.empty ,
-            !widget.isInputPwd ? Gaps.empty : Gaps.hGap15,
+            // !widget.isInputPwd ? Gaps.empty : Gaps.hGap15,
             // !widget.isInputPwd ? Gaps.empty : Semantics(
             //   label: '密码可见开关',
             //   hint: '密码是否可见',
