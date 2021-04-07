@@ -149,6 +149,9 @@ class SimpleTextFieldState extends State<SimpleTextField> with WidgetsBindingObs
           ),
           onChanged: (value) {
             if (_currentValue == value) return;
+            // if (widget.maxLength != null&& value.length >= widget.maxLength) {
+            //   controller.text = value.substring(0, widget.maxLength);
+            // }
             widget.onChanged(value);
             _currentValue = value;
           },

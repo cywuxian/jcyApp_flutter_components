@@ -146,6 +146,7 @@ class _ListGroupView extends State<ListGroupView> {
               title: '输入',
               trailing: SimpleTextField(
                   placeholder:'请输入',
+                  maxLength: 11,
                   keyboardType:TextInputType.number,
                  value: value,
                  trailing: Text('123'),
