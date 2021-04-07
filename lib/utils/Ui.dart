@@ -86,7 +86,7 @@ class Ui {
     AnimationController secondAnimation,
     bool useRootNavigator = false,
     bool isDismissible = true,
-    bool enableDrag = true,
+    bool enableDrag = true
   }) {
     assert(builder != null);
     return showMaterialModalBottomSheet(
@@ -148,6 +148,7 @@ class Ui {
     Function onCancel,
     List<FlatButton> actions = const [],
     bool showCloseButton = false,
+    EdgeInsetsGeometry bodyPadding = const EdgeInsets.only(left: 20, right: 20, bottom: 28),
     DialogTransaction transaction = DialogTransaction.slide,
     Duration duration = const Duration(milliseconds: 550)
   }) {
@@ -162,6 +163,7 @@ class Ui {
         confirmText: confirmText,
         showCancel: showCancelButton,
         showCloseButton: showCloseButton,
+        bodyPadding: bodyPadding,
         child: child,
         actions: actions,
         onConfirm: onConfirm,
